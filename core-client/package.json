@@ -1,0 +1,22 @@
+{
+  "name": "raftar-core-client",
+  "version": "1.0.0",
+  "description": "Network-Independent Offline Tracking Engine & SQLite Persistence for RAFTAR",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "test": "jest --runInBand",
+    "test:coverage": "jest --coverage"
+  },
+  "dependencies": {
+    "uuid": "^11.1.0"
+  },
+  "devDependencies": {
+    "@types/jest": "^29.5.14",
+    "@types/node": "^22.13.9",
+    "@types/uuid": "^10.0.0",
+    "jest": "^29.7.0",
+    "ts-jest": "^29.4.12",
+    "typescript": "^5.8.2"
+  }
+}
