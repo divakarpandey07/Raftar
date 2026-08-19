@@ -1,0 +1,47 @@
+{
+  "name": "RAFTAR - Athletic Intelligence",
+  "short_name": "RAFTAR",
+  "description": "Next-Generation Athletic Intelligence, GPS Tracking & Physiological Analytics",
+  "start_url": "/index.html",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#121212",
+  "theme_color": "#B02F00",
+  "icons": [
+    {
+      "src": "/app-logo.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ],
+  "categories": ["fitness", "sports", "health"],
+  "shortcuts": [
+    {
+      "name": "Start Run",
+      "short_name": "Run",
+      "description": "Start a new outdoor running session",
+      "url": "/index.html?action=start_run",
+      "icons": [{ "src": "/icon.svg", "sizes": "192x192" }]
+    },
+    {
+      "name": "Start Ride",
+      "short_name": "Ride",
+      "description": "Start a new cycling session",
+      "url": "/index.html?action=start_ride",
+      "icons": [{ "src": "/icon.svg", "sizes": "192x192" }]
+    }
+  ]
+}
