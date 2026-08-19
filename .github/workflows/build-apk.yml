@@ -25,12 +25,13 @@ jobs:
         with:
           java-version: '17'
           distribution: 'temurin'
-          cache: gradle
 
-      - name: Setup Android SDK
-        uses: android-actions/setup-android@v3
+      - name: Setup Gradle
+        uses: gradle/actions/setup-gradle@v3
+        with:
+          build-root-directory: mobile/android
 
-      - name: Make Gradlew Executable & Build Debug APK
+      - name: Build Debug APK
         working-directory: mobile/android
         run: |
           chmod +x gradlew
@@ -51,7 +52,7 @@ jobs:
         run: |
           TAG="${{ github.ref_name }}"
           if [ -z "$TAG" ] || [ "$TAG" = "main" ]; then
-            TAG="v1.0.6"
+            TAG="v1.0.7"
           fi
           gh release delete "$TAG" --yes || true
           gh release create "$TAG" release-assets/RAFTAR-Athletic-Intelligence-Debug.apk \
