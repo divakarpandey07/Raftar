@@ -75,12 +75,12 @@ class MainActivity : AppCompatActivity() {
             Manifest.permission.ACCESS_COARSE_LOCATION
         )
 
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.POST_NOTIFICATIONS) {
+        if (Build.VERSION.SDK_INT >= 33) {
             permissions.add(Manifest.permission.POST_NOTIFICATIONS)
         }
 
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.UPSIDE_DOWN_CAKE) {
-            permissions.add(Manifest.permission.FOREGROUND_SERVICE_LOCATION)
+        if (Build.VERSION.SDK_INT >= 34) {
+            permissions.add("android.permission.FOREGROUND_SERVICE_LOCATION")
         }
 
         val needed = permissions.filter {
@@ -94,7 +94,7 @@ class MainActivity : AppCompatActivity() {
 
     fun startForegroundTrackingService(activityId: String, sportType: String) {
         val intent = Intent(this, RaftarTrackingForegroundService::class.java).apply {
-            action = RaftarTrackingForegroundService.ACTION_START_TRACKING
+            action = RaftarTrackingForegroundService.ACTION_START
             putExtra(RaftarTrackingForegroundService.EXTRA_ACTIVITY_ID, activityId)
             putExtra(RaftarTrackingForegroundService.EXTRA_SPORT_TYPE, sportType)
         }
@@ -107,7 +107,7 @@ class MainActivity : AppCompatActivity() {
 
     fun stopForegroundTrackingService() {
         val intent = Intent(this, RaftarTrackingForegroundService::class.java).apply {
-            action = RaftarTrackingForegroundService.ACTION_STOP_TRACKING
+            action = RaftarTrackingForegroundService.ACTION_STOP
         }
         startService(intent)
     }

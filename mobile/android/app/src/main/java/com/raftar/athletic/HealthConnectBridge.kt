@@ -4,6 +4,7 @@ import android.content.Context
 import androidx.health.connect.client.HealthConnectClient
 import androidx.health.connect.client.permission.HealthPermission
 import androidx.health.connect.client.records.*
+import androidx.health.connect.client.records.metadata.Metadata
 import androidx.health.connect.client.units.*
 import java.time.Instant
 import java.time.ZoneOffset
@@ -11,9 +12,13 @@ import java.time.ZoneOffset
 class HealthConnectBridge(private val context: Context) {
 
     private val healthConnectClient: HealthConnectClient? by lazy {
-        if (HealthConnectClient.isProviderAvailable(context)) {
-            HealthConnectClient.getOrCreate(context)
-        } else null
+        try {
+            if (HealthConnectClient.isProviderAvailable(context)) {
+                HealthConnectClient.getOrCreate(context)
+            } else null
+        } catch (e: Exception) {
+            null
+        }
     }
 
     val requiredPermissions = setOf(
@@ -24,8 +29,7 @@ class HealthConnectBridge(private val context: Context) {
         HealthPermission.getReadPermission(ExerciseSessionRecord::class),
         HealthPermission.getWritePermission(ExerciseSessionRecord::class),
         HealthPermission.getReadPermission(ActiveCaloriesBurnedRecord::class),
-        HealthPermission.getWritePermission(ActiveCaloriesBurnedRecord::class),
-        HealthPermission.getReadPermission(HeartRateVariabilityRmssdRecord::class)
+        HealthPermission.getWritePermission(ActiveCaloriesBurnedRecord::class)
     )
 
     suspend fun insertCompletedWorkout(
@@ -48,7 +52,9 @@ class HealthConnectBridge(private val context: Context) {
             endTime = endTime,
             endZoneOffset = ZoneOffset.UTC,
             exerciseType = exerciseType,
-            title = title
+            title = title,
+            notes = null,
+            metadata = Metadata.manualEntry()
         )
         records.add(sessionRecord)
 
@@ -60,7 +66,8 @@ class HealthConnectBridge(private val context: Context) {
                     startZoneOffset = ZoneOffset.UTC,
                     endTime = endTime,
                     endZoneOffset = ZoneOffset.UTC,
-                    distance = Length.meters(distanceMeters)
+                    distance = Length.meters(distanceMeters),
+                    metadata = Metadata.manualEntry()
                 )
             )
         }
@@ -73,7 +80,8 @@ class HealthConnectBridge(private val context: Context) {
                     startZoneOffset = ZoneOffset.UTC,
                     endTime = endTime,
                     endZoneOffset = ZoneOffset.UTC,
-                    energy = Energy.kilocalories(activeCaloriesKcal)
+                    energy = Energy.kilocalories(activeCaloriesKcal),
+                    metadata = Metadata.manualEntry()
                 )
             )
         }
@@ -89,7 +97,8 @@ class HealthConnectBridge(private val context: Context) {
                     startZoneOffset = ZoneOffset.UTC,
                     endTime = endTime,
                     endZoneOffset = ZoneOffset.UTC,
-                    samples = samples
+                    samples = samples,
+                    metadata = Metadata.manualEntry()
                 )
             )
         }
