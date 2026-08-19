@@ -1,4 +1,4 @@
-﻿package com.raftar.mobile.health
+package com.raftar.athletic
 
 import android.content.Context
 import androidx.health.connect.client.HealthConnectClient

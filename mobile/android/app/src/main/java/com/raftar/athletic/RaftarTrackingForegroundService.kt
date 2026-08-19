@@ -1,4 +1,4 @@
-﻿package com.raftar.mobile.tracking
+package com.raftar.athletic
 
 import android.app.*
 import android.content.Context
@@ -18,6 +18,8 @@ class RaftarTrackingForegroundService : Service() {
         const val ACTION_PAUSE = "ACTION_PAUSE_TRACKING"
         const val ACTION_RESUME = "ACTION_RESUME_TRACKING"
         const val ACTION_STOP = "ACTION_STOP_TRACKING"
+        const val EXTRA_ACTIVITY_ID = "EXTRA_ACTIVITY_ID"
+        const val EXTRA_SPORT_TYPE = "EXTRA_SPORT_TYPE"
     }
 
     private lateinit var fusedLocationClient: FusedLocationProviderClient
@@ -60,7 +62,7 @@ class RaftarTrackingForegroundService : Service() {
             startForeground(
                 NOTIFICATION_ID,
                 notification,
-                ServiceInfo.FOREGROUND_SERVICE_TYPE_LOCATION or ServiceInfo.FOREGROUND_SERVICE_TYPE_CONNECTED_DEVICE
+                ServiceInfo.FOREGROUND_SERVICE_TYPE_LOCATION
             )
         } else {
             startForeground(NOTIFICATION_ID, notification)
