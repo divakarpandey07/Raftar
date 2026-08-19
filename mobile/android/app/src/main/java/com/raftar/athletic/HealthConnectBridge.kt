@@ -5,7 +5,8 @@ import androidx.health.connect.client.HealthConnectClient
 import androidx.health.connect.client.permission.HealthPermission
 import androidx.health.connect.client.records.*
 import androidx.health.connect.client.records.metadata.Metadata
-import androidx.health.connect.client.units.*
+import androidx.health.connect.client.units.Energy
+import androidx.health.connect.client.units.Length
 import java.time.Instant
 import java.time.ZoneOffset
 
@@ -54,7 +55,7 @@ class HealthConnectBridge(private val context: Context) {
             exerciseType = exerciseType,
             title = title,
             notes = null,
-            metadata = Metadata.manualEntry()
+            metadata = Metadata(recordingMethod = Metadata.RECORDING_METHOD_MANUAL_ENTRY)
         )
         records.add(sessionRecord)
 
@@ -67,7 +68,7 @@ class HealthConnectBridge(private val context: Context) {
                     endTime = endTime,
                     endZoneOffset = ZoneOffset.UTC,
                     distance = Length.meters(distanceMeters),
-                    metadata = Metadata.manualEntry()
+                    metadata = Metadata(recordingMethod = Metadata.RECORDING_METHOD_MANUAL_ENTRY)
                 )
             )
         }
@@ -81,7 +82,7 @@ class HealthConnectBridge(private val context: Context) {
                     endTime = endTime,
                     endZoneOffset = ZoneOffset.UTC,
                     energy = Energy.kilocalories(activeCaloriesKcal),
-                    metadata = Metadata.manualEntry()
+                    metadata = Metadata(recordingMethod = Metadata.RECORDING_METHOD_MANUAL_ENTRY)
                 )
             )
         }
@@ -98,7 +99,7 @@ class HealthConnectBridge(private val context: Context) {
                     endTime = endTime,
                     endZoneOffset = ZoneOffset.UTC,
                     samples = samples,
-                    metadata = Metadata.manualEntry()
+                    metadata = Metadata(recordingMethod = Metadata.RECORDING_METHOD_MANUAL_ENTRY)
                 )
             )
         }

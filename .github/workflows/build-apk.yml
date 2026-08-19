@@ -35,21 +35,23 @@ jobs:
         run: |
           chmod +x gradlew
           ./gradlew assembleDebug --stacktrace --no-daemon
+          mkdir -p ../../release-assets
+          cp app/build/outputs/apk/debug/*.apk ../../release-assets/RAFTAR-Athletic-Intelligence-Debug.apk || true
 
       - name: Upload Debug APK Artifact
         uses: actions/upload-artifact@v4
         with:
           name: RAFTAR-Athletic-Intelligence-Debug-APK
-          path: mobile/android/app/build/outputs/apk/debug/*.apk
+          path: release-assets/RAFTAR-Athletic-Intelligence-Debug.apk
 
       - name: Create GitHub Release with APK Asset
-        if: startsWith(github.ref, 'refs/tags/v') || github.event_name == 'workflow_dispatch'
+        if: startsWith(github.ref, 'refs/tags/v')
         uses: softprops/action-gh-release@v2
         with:
-          files: mobile/android/app/build/outputs/apk/debug/*.apk
+          files: release-assets/RAFTAR-Athletic-Intelligence-Debug.apk
           generate_release_notes: true
           fail_on_unmatched_files: false
-          tag_name: ${{ github.ref_name || 'v1.0.2' }}
-          name: "RAFTAR Athletic Intelligence ${{ github.ref_name || 'v1.0.2' }}"
+          tag_name: ${{ github.ref_name }}
+          name: "RAFTAR Athletic Intelligence ${{ github.ref_name }}"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
