@@ -27,7 +27,10 @@ jobs:
           distribution: 'temurin'
           cache: gradle
 
-      - name: Build Debug APK
+      - name: Setup Android SDK
+        uses: android-actions/setup-android@v3
+
+      - name: Make Gradlew Executable & Build Debug APK
         working-directory: mobile/android
         run: |
           chmod +x gradlew
@@ -41,14 +44,16 @@ jobs:
           name: RAFTAR-Athletic-Intelligence-Debug-APK
           path: release-assets/RAFTAR-Athletic-Intelligence-Debug.apk
 
-      - name: Create GitHub Release with APK Asset
+      - name: Publish GitHub Release via Native GitHub CLI
         if: startsWith(github.ref, 'refs/tags/v') || github.event_name == 'workflow_dispatch'
-        uses: softprops/action-gh-release@v2
-        with:
-          files: release-assets/RAFTAR-Athletic-Intelligence-Debug.apk
-          generate_release_notes: true
-          fail_on_unmatched_files: false
-          tag_name: ${{ github.ref_name || 'v1.0.5' }}
-          name: "RAFTAR Athletic Intelligence ${{ github.ref_name || 'v1.0.5' }}"
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          TAG="${{ github.ref_name }}"
+          if [ -z "$TAG" ] || [ "$TAG" = "main" ]; then
+            TAG="v1.0.6"
+          fi
+          gh release delete "$TAG" --yes || true
+          gh release create "$TAG" release-assets/RAFTAR-Athletic-Intelligence-Debug.apk \
+            --title "RAFTAR Athletic Intelligence $TAG" \
+            --notes "Official Android Release APK for RAFTAR Athletic Intelligence Platform (120Hz Ultra-Smooth Engine)."
