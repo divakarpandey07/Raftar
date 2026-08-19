@@ -1,0 +1,281 @@
+﻿<!-- RAFTAR Athlete Profile -->
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>RAFTAR - Athlete Profile</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Hanken+Grotesk:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+                "primary": "#b02f00",
+                "surface-container": "#ffe9e4",
+                "on-tertiary-container": "#fcfcff",
+                "background": "#fff8f6",
+                "secondary-fixed": "#e2e2e5",
+                "on-secondary-fixed-variant": "#454749",
+                "on-primary-fixed": "#3b0900",
+                "on-secondary-container": "#636467",
+                "on-primary": "#ffffff",
+                "on-primary-container": "#541200",
+                "primary-fixed-dim": "#ffb5a0",
+                "surface": "#fff8f6",
+                "on-secondary-fixed": "#1a1c1e",
+                "tertiary-fixed": "#c8e6ff",
+                "outline": "#907067",
+                "tertiary-fixed-dim": "#86cfff",
+                "on-error": "#ffffff",
+                "surface-tint": "#b02f00",
+                "on-tertiary-fixed-variant": "#004c6d",
+                "surface-variant": "#fadcd4",
+                "on-background": "#271813",
+                "error-container": "#ffdad6",
+                "inverse-surface": "#3e2c27",
+                "surface-container-low": "#fff1ed",
+                "outline-variant": "#e4beb4",
+                "inverse-primary": "#ffb5a0",
+                "tertiary": "#00628c",
+                "on-surface": "#271813",
+                "tertiary-container": "#007caf",
+                "surface-dim": "#f1d4cc",
+                "track-white": "#FFFFFF",
+                "error": "#ba1a1a",
+                "on-tertiary-fixed": "#001e2e",
+                "surface-bright": "#fff8f6",
+                "on-error-container": "#93000a",
+                "secondary": "#5d5e61",
+                "on-secondary": "#ffffff",
+                "saffron-vibrant": "#FF5722",
+                "asphalt-gray": "#454749",
+                "surface-ice": "#F8F9FA",
+                "secondary-container": "#e2e2e5",
+                "on-surface-variant": "#5b4039",
+                "secondary-fixed-dim": "#c6c6c9",
+                "surface-container-high": "#ffe2da",
+                "surface-container-highest": "#fadcd4",
+                "primary-fixed": "#ffdbd1",
+                "surface-container-lowest": "#ffffff",
+                "saffron-glow": "#FF8A65",
+                "on-tertiary": "#ffffff",
+                "on-primary-fixed-variant": "#862200",
+                "inverse-on-surface": "#ffede8",
+                "primary-container": "#ff5722"
+        },
+        "borderRadius": {
+                "DEFAULT": "0.125rem",
+                "lg": "0.25rem",
+                "xl": "0.5rem",
+                "full": "0.75rem"
+        },
+        "spacing": {
+                "unit-md": "24px",
+                "margin-edge": "20px",
+                "unit-sm": "12px",
+                "unit-lg": "48px",
+                "unit-xs": "4px",
+                "gutter": "16px"
+        },
+        "fontFamily": {
+                "display-xl": ["Sora"],
+                "label-caps": ["JetBrains Mono"],
+                "display-xl-mobile": ["Sora"],
+                "display-lg": ["Sora"],
+                "data-num": ["Sora"],
+                "body-md": ["Hanken Grotesk"],
+                "headline-md": ["Sora"],
+                "body-lg": ["Hanken Grotesk"]
+        }
+      }
+    }
+  }
+</script>
+<style>
+        body { background-color: #fff8f6; color: #271813; }
+        .pulse-saffron { animation: pulse-op 1s infinite alternate cubic-bezier(0.19, 1, 0.22, 1); }
+        @keyframes pulse-op { from { opacity: 1; } to { opacity: 0.85; } }
+        .mech-transition { transition: all 0.15s cubic-bezier(0.19, 1, 0.22, 1); }
+        .tech-grid {
+            background-image: linear-gradient(to right, #fadcd4 1px, transparent 1px),
+                              linear-gradient(to bottom, #fadcd4 1px, transparent 1px);
+            background-size: 24px 24px;
+            opacity: 0.5;
+        }
+        body { min-height: max(884px, 100dvh); }
+</style>
+</head>
+<body class="font-body-md bg-background text-on-surface antialiased pb-24 md:pb-0">
+<header class="fixed top-0 left-0 right-0 z-50 bg-surface-container-lowest border-b border-surface-variant flex justify-between items-center w-full px-margin-edge h-16">
+<div class="flex items-center gap-gutter">
+<div class="w-8 h-8 rounded-full overflow-hidden border border-surface-variant flex items-center justify-center bg-surface-variant text-on-surface-variant font-label-caps text-[10px]">
+<img class="w-full h-full object-cover" data-alt="Athlete portrait" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCN2zVh-fg-qC81q8FsQjO3lo4dXGz7qSUta1kVYtjT3JDVzJpPs0UjCp0h_2xC0Eb6zrRj_3P7oMCpUysKD9NK-me7yO-vut3vHbLDDuRQd2KvTeZwd97S9hmrhlDihAr1pTDVAM54tzg6KtVduYRqbwIg7w-_lrexLN7Fnt03BCVM3q9mo1OBFRsnv4_YTPS4rrQ_iE_AQob1M5Pe_1a4WU-hhHpiwyI-d0_BLGacsKvCnsmrHyVA"/>
+</div>
+</div>
+<div class="text-display-lg font-display-lg text-on-surface tracking-tighter">RAFTAR</div>
+<div class="flex items-center gap-gutter text-on-surface-variant hover:text-primary transition-colors duration-200 cursor-pointer">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">sensors</span>
+</div>
+</header>
+<main class="pt-16 pb-20 min-h-screen relative">
+<div class="fixed inset-0 tech-grid pointer-events-none z-0"></div>
+<section class="relative w-full h-[442px] min-h-[400px] mb-unit-lg z-10">
+<div class="absolute inset-0 bg-surface-container-highest">
+<img class="w-full h-full object-cover opacity-80 mix-blend-multiply" data-alt="Athlete running" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDLKlJdDIg5N-ga-SPBb0fWzcsMhbqyRMqEE6FUANAqcv-xAOCobEFoq46VBECXUatJG7U6mt8MbDGQnAVYl88TQWTkdFHPsX-bIQicDbIdtZ5Nalbhoi4a5o20fQqNyczu_mizPlWAeYh91dMxjz0gjz1oruS9Nk3n01b7PdonP2fkd8shUK0z2N5MhnRSiGXAT7sjhd8smmKpyLM0N4bKciuVb6ijBd5ZRhyZejvMVzZBnf2IZ1HF"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent"></div>
+</div>
+<div class="absolute bottom-0 left-0 right-0 p-margin-edge flex flex-col gap-unit-xs">
+<div class="flex items-center gap-gutter text-primary-container font-label-caps text-label-caps">
+<span class="w-2 h-2 rounded-full bg-primary-container pulse-saffron"></span>
+                    STATUS: OPTIMAL
+                </div>
+<h1 class="font-display-xl text-display-xl text-on-surface uppercase tracking-tighter">ALEX<br/>VANCE</h1>
+<p class="font-label-caps text-label-caps text-outline">L7 // ENDURANCE SPECIALIST</p>
+</div>
+</section>
+<div class="px-margin-edge max-w-5xl mx-auto space-y-unit-lg relative z-10">
+<section>
+<div class="grid grid-cols-3 gap-gutter">
+<div class="bg-surface-container-lowest p-unit-md border border-outline-variant shadow-sm rounded">
+<div class="font-label-caps text-label-caps text-outline mb-unit-sm">LIFETIME DISTANCE</div>
+<div class="font-data-num text-data-num text-on-surface">12,450</div>
+<div class="font-label-caps text-[10px] text-outline mt-1">KILOMETERS</div>
+</div>
+<div class="bg-surface-container-lowest p-unit-md border border-outline-variant shadow-sm rounded">
+<div class="font-label-caps text-label-caps text-outline mb-unit-sm">TOTAL HOURS</div>
+<div class="font-data-num text-data-num text-on-surface">842</div>
+<div class="font-label-caps text-[10px] text-outline mt-1">HOURS</div>
+</div>
+<div class="bg-surface-container-lowest p-unit-md border border-outline-variant shadow-sm rounded">
+<div class="font-label-caps text-label-caps text-outline mb-unit-sm">ELEVATION GAIN</div>
+<div class="font-data-num text-data-num text-on-surface">145K</div>
+<div class="font-label-caps text-[10px] text-outline mt-1">METERS</div>
+</div>
+</div>
+</section>
+<section class="bg-surface-container-lowest p-unit-md border border-outline-variant shadow-sm rounded">
+<div class="flex justify-between items-end mb-unit-md">
+<div>
+<h2 class="font-headline-md text-headline-md text-on-surface">FITNESS INDEX</h2>
+<p class="font-label-caps text-label-caps text-outline mt-1">TRAJECTORY: ASCENDING</p>
+</div>
+<div class="font-data-num text-[32px] font-bold text-primary-container">87.4</div>
+</div>
+<div class="h-24 w-full flex items-end gap-1 border-b border-surface-variant pb-1">
+<div class="w-full flex justify-between items-end h-full">
+<div class="w-[3%] bg-surface-variant h-[40%]"></div>
+<div class="w-[3%] bg-surface-variant h-[45%]"></div>
+<div class="w-[3%] bg-surface-variant h-[42%]"></div>
+<div class="w-[3%] bg-surface-variant h-[50%]"></div>
+<div class="w-[3%] bg-surface-variant h-[48%]"></div>
+<div class="w-[3%] bg-surface-variant h-[55%]"></div>
+<div class="w-[3%] bg-surface-variant h-[60%]"></div>
+<div class="w-[3%] bg-surface-variant h-[58%]"></div>
+<div class="w-[3%] bg-surface-variant h-[65%]"></div>
+<div class="w-[3%] bg-surface-variant h-[62%]"></div>
+<div class="w-[3%] bg-surface-variant h-[70%]"></div>
+<div class="w-[3%] bg-surface-variant h-[68%]"></div>
+<div class="w-[3%] bg-surface-variant h-[75%]"></div>
+<div class="w-[3%] bg-surface-variant h-[72%]"></div>
+<div class="w-[3%] bg-surface-variant h-[80%]"></div>
+<div class="w-[3%] bg-surface-variant h-[85%]"></div>
+<div class="w-[3%] bg-primary-container h-[90%] pulse-saffron rounded-t-[2px]"></div>
+</div>
+</div>
+<div class="flex justify-between font-label-caps text-[10px] text-outline mt-2">
+<span>Q1</span><span>Q2</span><span>Q3</span><span>CURRENT</span>
+</div>
+</section>
+<section>
+<div class="flex justify-between items-center mb-unit-md border-b border-outline-variant pb-2">
+<h2 class="font-headline-md text-headline-md text-on-surface">THE VAULT</h2>
+<span class="font-label-caps text-label-caps text-primary cursor-pointer hover:text-primary-container transition-colors">VIEW ALL</span>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-gutter">
+<div class="bg-surface-container-lowest border border-outline-variant rounded aspect-square flex flex-col items-center justify-center p-4 relative overflow-hidden group cursor-pointer mech-transition hover:border-primary-container hover:shadow-md">
+<div class="absolute inset-0 bg-gradient-to-br from-surface-container-lowest to-surface-container z-0"></div>
+<span class="material-symbols-outlined text-4xl text-primary-container mb-2 z-10" style="font-variation-settings: 'FILL' 1;">timer</span>
+<div class="font-data-num text-data-num text-on-surface z-10">38:42</div>
+<div class="font-label-caps text-[10px] text-outline text-center mt-1 z-10">10K PR<br/>2023.10.14</div>
+</div>
+<div class="bg-surface-container-lowest border border-outline-variant rounded aspect-square flex flex-col items-center justify-center p-4 relative overflow-hidden group cursor-pointer mech-transition hover:border-primary-container hover:shadow-md">
+<div class="absolute inset-0 bg-gradient-to-br from-surface-container-lowest to-surface-container z-0"></div>
+<span class="material-symbols-outlined text-4xl text-outline mb-2 z-10" style="font-variation-settings: 'FILL' 0;">landscape</span>
+<div class="font-data-num text-data-num text-on-surface z-10">150K</div>
+<div class="font-label-caps text-[10px] text-outline text-center mt-1 z-10">LONGEST RIDE<br/>2023.08.22</div>
+</div>
+<div class="bg-surface-container-lowest border border-outline-variant rounded aspect-square flex flex-col items-center justify-center p-4 relative overflow-hidden group cursor-pointer mech-transition hover:border-primary-container hover:shadow-md">
+<div class="absolute inset-0 bg-gradient-to-br from-surface-container-lowest to-surface-container z-0"></div>
+<span class="material-symbols-outlined text-4xl text-primary-container mb-2 z-10" style="font-variation-settings: 'FILL' 1;">workspace_premium</span>
+<div class="font-data-num text-[16px] font-bold text-on-surface z-10 text-center">CENTURION</div>
+<div class="font-label-caps text-[10px] text-outline text-center mt-1 z-10">100 DAYS ACTIVE</div>
+</div>
+<div class="bg-surface-container-lowest border border-outline-variant rounded aspect-square flex flex-col items-center justify-center p-4 relative overflow-hidden group cursor-pointer mech-transition hover:border-primary-container hover:shadow-md">
+<div class="absolute inset-0 bg-gradient-to-br from-surface-container-lowest to-surface-container z-0"></div>
+<span class="material-symbols-outlined text-4xl text-outline mb-2 z-10" style="font-variation-settings: 'FILL' 0;">bolt</span>
+<div class="font-data-num text-[16px] font-bold text-on-surface z-10 text-center">PEAK PWR</div>
+<div class="font-label-caps text-[10px] text-outline text-center mt-1 z-10">1200W SPRINT</div>
+</div>
+</div>
+</section>
+<section class="mb-unit-lg">
+<div class="flex justify-between items-center mb-unit-md border-b border-outline-variant pb-2">
+<h2 class="font-headline-md text-headline-md text-on-surface">THE KIT</h2>
+</div>
+<div class="flex flex-col gap-gutter">
+<div class="bg-surface-container-lowest border border-outline-variant rounded p-4 flex items-center gap-4 shadow-sm">
+<div class="w-16 h-16 bg-surface-container-lowest border border-outline-variant flex-shrink-0 relative overflow-hidden rounded">
+<img class="w-full h-full object-cover grayscale mix-blend-multiply" data-alt="Running shoe" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBj6Kb9GCfYr5xqyGb7k8Wj5lmPwELvSSd0Yk0UXcvqf6U5Syk6Xjn9eakKU91PhBdc5iIv9EijJqEUyAmH2eQWG48TT08JJKX6C98jhcKFVsvSTMxw3O8kzk4UybPmEPANawkPBMqhq3sAWXUApXGY9WCWYqw0_DtqNIJHax8fnWOpxvsEHxw_Mku98mvVV4RQ_6LDfhbgnbdeq4gbJJcU6i-Fo3Oj4HTr0slvSbu5X4o0-OAU00-u"/>
+</div>
+<div class="flex-grow">
+<div class="font-label-caps text-label-caps text-outline">PRIMARY ROAD</div>
+<div class="font-headline-md text-[18px] text-on-surface uppercase tracking-tight">ALPHA PRO X</div>
+</div>
+<div class="text-right">
+<div class="font-data-num text-data-num text-primary-container">240</div>
+<div class="font-label-caps text-[10px] text-outline">KM / 400KM MAX</div>
+</div>
+</div>
+<div class="bg-surface-container-lowest border border-outline-variant rounded p-4 flex items-center gap-4 shadow-sm">
+<div class="w-16 h-16 bg-surface-container-lowest border border-outline-variant flex-shrink-0 relative overflow-hidden flex items-center justify-center rounded">
+<span class="material-symbols-outlined text-outline" style="font-variation-settings: 'FILL' 0;">directions_bike</span>
+</div>
+<div class="flex-grow">
+<div class="font-label-caps text-label-caps text-outline">GRAVEL RIG</div>
+<div class="font-headline-md text-[18px] text-on-surface uppercase tracking-tight">TERRA-V1</div>
+</div>
+<div class="text-right">
+<div class="font-data-num text-data-num text-on-surface">1,240</div>
+<div class="font-label-caps text-[10px] text-outline">KM</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+</main>
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center h-20 px-gutter bg-surface-container-lowest border-t border-surface-variant md:hidden">
+<a class="flex flex-col items-center justify-center text-outline hover:text-primary transition-all" href="#">
+<span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 0;">find_replace</span>
+<span class="font-label-caps text-[10px]">Analytics</span>
+</a>
+<a class="flex flex-col items-center justify-center text-outline hover:text-primary transition-all" href="#">
+<span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 0;">save_as</span>
+<span class="font-label-caps text-[10px]">Explore</span>
+</a>
+<a class="flex flex-col items-center justify-center text-outline hover:text-primary transition-all" href="#">
+<span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 0;">cloud_download</span>
+<span class="font-label-caps text-[10px]">Record</span>
+</a>
+<a class="flex flex-col items-center justify-center text-outline hover:text-primary transition-all" href="#">
+<span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 0;">downloading</span>
+<span class="font-label-caps text-[10px]">Mind</span>
+</a>
+<a class="flex flex-col items-center justify-center text-primary-container animate-pulse haptic-feedback" href="#">
+<span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 1;">file_download</span>
+<span class="font-label-caps text-[10px]">Person</span>
+</a>
+</nav>
+</body></html>

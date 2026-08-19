@@ -1,0 +1,179 @@
+﻿<!-- RAFTAR Live Record -->
+<!DOCTYPE html>
+<html class="" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>RAFTAR - Live Activity</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Sora:wght@400;600;700;800&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+                "primary": "#b02f00",
+                "surface-container": "#ffe9e4",
+                "on-tertiary-container": "#fcfcff",
+                "background": "#fff8f6",
+                "secondary-fixed": "#e2e2e5",
+                "on-secondary-fixed-variant": "#454749",
+                "on-primary-fixed": "#3b0900",
+                "on-secondary-container": "#636467",
+                "on-primary": "#ffffff",
+                "on-primary-container": "#541200",
+                "primary-fixed-dim": "#ffb5a0",
+                "surface": "#fff8f6",
+                "on-secondary-fixed": "#1a1c1e",
+                "tertiary-fixed": "#c8e6ff",
+                "outline": "#907067",
+                "tertiary-fixed-dim": "#86cfff",
+                "on-error": "#ffffff",
+                "surface-tint": "#b02f00",
+                "on-tertiary-fixed-variant": "#004c6d",
+                "surface-variant": "#fadcd4",
+                "on-background": "#271813",
+                "error-container": "#ffdad6",
+                "inverse-surface": "#3e2c27",
+                "surface-container-low": "#fff1ed",
+                "outline-variant": "#e4beb4",
+                "inverse-primary": "#ffb5a0",
+                "tertiary": "#00628c",
+                "on-surface": "#271813",
+                "tertiary-container": "#007caf",
+                "surface-dim": "#f1d4cc",
+                "track-white": "#FFFFFF",
+                "error": "#ba1a1a",
+                "on-tertiary-fixed": "#001e2e",
+                "surface-bright": "#fff8f6",
+                "on-error-container": "#93000a",
+                "secondary": "#5d5e61",
+                "on-secondary": "#ffffff",
+                "saffron-vibrant": "#FF5722",
+                "asphalt-gray": "#454749",
+                "surface-ice": "#F8F9FA",
+                "secondary-container": "#e2e2e5",
+                "on-surface-variant": "#5b4039",
+                "secondary-fixed-dim": "#c6c6c9",
+                "surface-container-high": "#ffe2da",
+                "surface-container-highest": "#fadcd4",
+                "primary-fixed": "#ffdbd1",
+                "surface-container-lowest": "#ffffff",
+                "saffron-glow": "#FF8A65",
+                "on-tertiary": "#ffffff",
+                "on-primary-fixed-variant": "#862200",
+                "inverse-on-surface": "#ffede8",
+                "primary-container": "#ff5722"
+        },
+        "borderRadius": {
+                "DEFAULT": "0.125rem",
+                "lg": "0.25rem",
+                "xl": "0.5rem",
+                "full": "0.75rem"
+        },
+        "spacing": {
+                "unit-md": "24px",
+                "margin-edge": "20px",
+                "unit-sm": "12px",
+                "unit-lg": "48px",
+                "unit-xs": "4px",
+                "gutter": "16px"
+        },
+        "fontFamily": {
+                "display-xl": ["Sora"],
+                "label-caps": ["JetBrains Mono"],
+                "display-xl-mobile": ["Sora"],
+                "display-lg": ["Sora"],
+                "data-num": ["Sora"],
+                "body-md": ["Hanken Grotesk"],
+                "headline-md": ["Sora"],
+                "body-lg": ["Hanken Grotesk"]
+        }
+      }
+    }
+  }
+</script>
+<style>
+        body { background-color: #fff8f6; color: #271813; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .kinetic-pulse { animation: pulse-opacity 1s infinite alternate; }
+        @keyframes pulse-opacity {
+            0% { opacity: 1; }
+            100% { opacity: 0.85; }
+        }
+        .data-carved { text-shadow: 0 1px 2px rgba(255,255,255,0.8); }
+        body { min-height: max(884px, 100dvh); }
+</style>
+</head>
+<body class="h-screen w-full flex flex-col font-body-md overflow-hidden bg-background text-on-background">
+<header class="w-full flex justify-between items-center px-margin-edge py-unit-sm h-16 border-b border-surface-variant z-10 bg-surface">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-saffron-vibrant text-lg">gps_fixed</span>
+<span class="font-label-caps text-label-caps text-saffron-vibrant uppercase">High</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-widest">Offline Ready</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="font-label-caps text-label-caps text-on-surface">82%</span>
+<span class="material-symbols-outlined text-on-surface text-lg">battery_5_bar</span>
+</div>
+</header>
+<main class="flex-1 flex flex-col overflow-y-auto px-margin-edge pt-unit-md pb-32">
+<div class="flex flex-col gap-unit-md mb-unit-lg">
+<div class="flex flex-col">
+<span class="font-label-caps text-label-caps text-outline uppercase mb-1">Pace (Min/KM)</span>
+<span class="font-display-xl text-[72px] leading-none tracking-tighter text-saffron-vibrant data-carved">4'12"</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-caps text-label-caps text-outline uppercase mb-1">Distance</span>
+<span class="font-display-xl text-[56px] leading-none tracking-tighter text-saffron-vibrant data-carved">8.42 <span class="text-headline-md font-headline-md text-on-surface-variant">KM</span></span>
+</div>
+</div>
+<div class="w-full bg-surface-container border border-surface-variant p-margin-edge mb-unit-lg">
+<div class="flex justify-between items-center mb-unit-sm">
+<span class="font-label-caps text-label-caps text-outline uppercase">Heart Rate</span>
+<div class="flex items-center gap-2">
+<span class="font-data-num text-data-num text-error">168</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant">BPM</span>
+<span class="material-symbols-outlined text-error kinetic-pulse text-sm" style="font-variation-settings: 'FILL' 1;">favorite</span>
+</div>
+</div>
+<div class="w-full h-24 flex items-end justify-between gap-[2px] opacity-80">
+<div class="w-full bg-surface-variant h-1/4"></div>
+<div class="w-full bg-surface-variant h-2/4"></div>
+<div class="w-full bg-surface-variant h-3/4"></div>
+<div class="w-full bg-surface-variant h-2/4"></div>
+<div class="w-full bg-surface-variant h-4/4"></div>
+<div class="w-full bg-surface-variant h-[90%]"></div>
+<div class="w-full bg-surface-variant h-[85%]"></div>
+<div class="w-full bg-error h-[95%]"></div>
+<div class="w-full bg-error h-full"></div>
+<div class="w-full bg-error kinetic-pulse h-[98%]"></div>
+</div>
+<div class="w-full flex justify-between mt-2">
+<span class="font-label-caps text-[10px] text-on-surface-variant">Z3</span>
+<span class="font-label-caps text-[10px] text-error">Z4 (VIGOROUS)</span>
+</div>
+</div>
+<div class="w-full h-48 border border-surface-variant relative overflow-hidden bg-surface-container-low mb-unit-lg">
+<img class="absolute inset-0 w-full h-full object-cover opacity-50 grayscale mix-blend-multiply" data-alt="Satellite map view" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCvzNzV2apmDieKQUljpCSvQnBlzOYRlg38FwxEHSokXWnhUr2JgtUbGUgfw-CPURfQ8aHi15ANM3DO7rUj_9Ge6SWPUeCLt25LcgUCl6_cfvfzS4sMtQz2aafBCuL1MqtQCYHsXbys4wkXbN-ntYJ_pEc4dwiRDf3givEmOQzsQtM_xmczf1T2N4YzNHybGTv3cJttnJk1qdG24muON6OnRZwR3FNCqBwc-D4O9OT02p2luDPIIVp1"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background to-transparent opacity-80"></div>
+<div class="absolute bottom-4 left-4 flex items-center gap-2">
+<div class="w-3 h-3 rounded-full bg-saffron-vibrant kinetic-pulse"></div>
+<span class="font-label-caps text-label-caps text-saffron-vibrant">LIVE TRACKING</span>
+</div>
+</div>
+</main>
+<div class="fixed bottom-0 left-0 w-full h-32 bg-gradient-to-t from-background via-background to-transparent flex items-end justify-between px-margin-edge pb-margin-edge z-20">
+<button class="w-[48%] h-16 bg-surface-container border border-surface-variant flex items-center justify-center gap-2 active:bg-surface-variant transition-colors duration-100">
+<span class="material-symbols-outlined text-on-surface" style="font-variation-settings: 'FILL' 1;">pause</span>
+<span class="font-label-caps text-label-caps text-on-surface uppercase tracking-widest">Pause</span>
+</button>
+<button class="w-[48%] h-16 bg-saffron-vibrant text-on-primary flex items-center justify-center gap-2 active:bg-surface active:text-saffron-vibrant active:border-2 active:border-saffron-vibrant transition-all duration-100">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">stop</span>
+<span class="font-label-caps text-label-caps uppercase tracking-widest font-bold">Finish</span>
+</button>
+</div>
+</body></html>

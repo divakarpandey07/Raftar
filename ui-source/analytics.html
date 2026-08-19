@@ -1,0 +1,219 @@
+﻿<!-- RAFTAR Performance Analytics -->
+<!DOCTYPE html>
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>RAFTAR - Analytics</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Sora:wght@100..800&display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+                "primary": "#b02f00",
+                "surface-container": "#ffe9e4",
+                "on-tertiary-container": "#fcfcff",
+                "background": "#fff8f6",
+                "secondary-fixed": "#e2e2e5",
+                "on-secondary-fixed-variant": "#454749",
+                "on-primary-fixed": "#3b0900",
+                "on-secondary-container": "#636467",
+                "on-primary": "#ffffff",
+                "on-primary-container": "#541200",
+                "primary-fixed-dim": "#ffb5a0",
+                "surface": "#fff8f6",
+                "on-secondary-fixed": "#1a1c1e",
+                "tertiary-fixed": "#c8e6ff",
+                "outline": "#907067",
+                "tertiary-fixed-dim": "#86cfff",
+                "on-error": "#ffffff",
+                "surface-tint": "#b02f00",
+                "on-tertiary-fixed-variant": "#004c6d",
+                "surface-variant": "#fadcd4",
+                "on-background": "#271813",
+                "error-container": "#ffdad6",
+                "inverse-surface": "#3e2c27",
+                "surface-container-low": "#fff1ed",
+                "outline-variant": "#e4beb4",
+                "inverse-primary": "#ffb5a0",
+                "tertiary": "#00628c",
+                "on-surface": "#271813",
+                "tertiary-container": "#007caf",
+                "surface-dim": "#f1d4cc",
+                "track-white": "#FFFFFF",
+                "error": "#ba1a1a",
+                "on-tertiary-fixed": "#001e2e",
+                "surface-bright": "#fff8f6",
+                "on-error-container": "#93000a",
+                "secondary": "#5d5e61",
+                "on-secondary": "#ffffff",
+                "saffron-vibrant": "#FF5722",
+                "asphalt-gray": "#454749",
+                "surface-ice": "#F8F9FA",
+                "secondary-container": "#e2e2e5",
+                "on-surface-variant": "#5b4039",
+                "secondary-fixed-dim": "#c6c6c9",
+                "surface-container-high": "#ffe2da",
+                "surface-container-highest": "#fadcd4",
+                "primary-fixed": "#ffdbd1",
+                "surface-container-lowest": "#ffffff",
+                "saffron-glow": "#FF8A65",
+                "on-tertiary": "#ffffff",
+                "on-primary-fixed-variant": "#862200",
+                "inverse-on-surface": "#ffede8",
+                "primary-container": "#ff5722"
+        },
+        "borderRadius": {
+                "DEFAULT": "0.125rem",
+                "lg": "0.25rem",
+                "xl": "0.5rem",
+                "full": "0.75rem"
+        },
+        "spacing": {
+                "unit-md": "24px",
+                "margin-edge": "20px",
+                "unit-sm": "12px",
+                "unit-lg": "48px",
+                "unit-xs": "4px",
+                "gutter": "16px"
+        },
+        "fontFamily": {
+                "display-xl": ["Sora"],
+                "label-caps": ["JetBrains Mono"],
+                "display-xl-mobile": ["Sora"],
+                "display-lg": ["Sora"],
+                "data-num": ["Sora"],
+                "body-md": ["Hanken Grotesk"],
+                "headline-md": ["Sora"],
+                "body-lg": ["Hanken Grotesk"]
+        }
+      }
+    }
+  }
+</script>
+<style>
+        body { background-color: #fff8f6; color: #271813; }
+        .kinetic-lime { color: #FF5722; }
+        .bg-kinetic-lime { background-color: #FF5722; }
+        .border-kinetic-lime { border-color: #FF5722; }
+        .surface-1 { background-color: #ffffff; border: 1px solid #fadcd4; }
+        .pulse-active { animation: pulse-op 1s infinite alternate; }
+        @keyframes pulse-op { from { opacity: 1; } to { opacity: 0.85; } }
+        .bar-grid { background-image: linear-gradient(to right, #fadcd4 1px, transparent 1px); background-size: 10% 100%; }
+        .haptic-click:active { transform: scale(0.98); transition: transform 100ms cubic-bezier(0.19, 1, 0.22, 1); }
+        body { min-height: max(884px, 100dvh); }
+</style>
+</head>
+<body class="antialiased pb-[100px]">
+<header class="bg-surface text-secondary docked full-width top-0 border-b border-outline-variant flat no shadows flex justify-between items-center w-full px-margin-edge h-16 sticky z-40">
+<div class="flex items-center gap-gutter">
+<div class="w-8 h-8 rounded-full overflow-hidden bg-surface-variant flex items-center justify-center">
+<img class="object-cover w-full h-full" data-alt="Athlete profile" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAKt4lEA12Ly35vfBS5y1gH5CLfFLSkyU5Cts0LHUDLmlmqF3700tDjRC41KqDQZ4qJJqUVPOYw7MBk6j27OnZA0iws5lWR5OTCOv5QJJfW1hLDP1y6tcC6I3HI_AErABh5mfOP042RRhSVGz6q5GLUcegCBgqp2CuREFOjmO3iPctw_VOmOQIFmoZxCV0yzz9wfIpYUL5e7qEMzvcpTJ-HN2Fo7qse4XvBaiFsJdHdJdlQVrGZsLg8"/>
+</div>
+<span class="text-display-lg font-display-lg text-on-surface tracking-tighter uppercase">RAFTAR</span>
+</div>
+<div class="flex items-center haptic-click cursor-pointer">
+<span class="material-symbols-outlined text-secondary hover:text-primary transition-colors duration-200" style="font-variation-settings: 'FILL' 0;">sensors</span>
+</div>
+</header>
+<main class="px-margin-edge pt-unit-md flex flex-col gap-unit-lg max-w-4xl mx-auto">
+<section class="flex flex-col gap-unit-sm">
+<h1 class="text-headline-md font-headline-md text-on-surface">PERFORMANCE ANALYTICS</h1>
+<p class="text-label-caps font-label-caps text-outline uppercase tracking-widest">Deep Dive Overview</p>
+</section>
+<section class="surface-1 rounded-xl p-unit-md flex flex-col gap-unit-md shadow-sm">
+<div class="flex justify-between items-end border-b border-surface-variant pb-gutter">
+<div>
+<h2 class="text-label-caps font-label-caps text-on-surface">TRAINING LOAD</h2>
+<div class="text-display-xl font-display-xl text-on-surface mt-1">482 <span class="text-data-num font-data-num text-outline">tss</span></div>
+</div>
+<div class="text-right">
+<span class="text-label-caps font-label-caps kinetic-lime flex items-center justify-end gap-1"><span class="material-symbols-outlined text-[16px]">trending_up</span> OPTIMAL</span>
+</div>
+</div>
+<div class="h-48 w-full relative bar-grid flex items-end justify-between px-1">
+<div class="w-2 rounded-t-sm bg-surface-variant h-[20%]"></div>
+<div class="w-2 rounded-t-sm bg-surface-variant h-[35%]"></div>
+<div class="w-2 rounded-t-sm bg-surface-variant h-[50%]"></div>
+<div class="w-2 rounded-t-sm bg-surface-variant h-[40%]"></div>
+<div class="w-2 rounded-t-sm bg-kinetic-lime h-[70%] pulse-active shadow-[0_0_8px_#FF8A65]"></div>
+<div class="w-2 rounded-t-sm bg-surface-variant h-[85%]"></div>
+<div class="w-2 rounded-t-sm bg-surface-variant h-[60%]"></div>
+<div class="w-2 rounded-t-sm bg-surface-variant h-[90%]"></div>
+<div class="w-2 rounded-t-sm bg-surface-variant h-[75%]"></div>
+<div class="w-2 rounded-t-sm bg-kinetic-lime h-[100%] pulse-active shadow-[0_0_8px_#FF8A65]"></div>
+</div>
+<div class="flex justify-between text-label-caps font-label-caps text-outline">
+<span>MON</span><span>TUE</span><span>WED</span><span>THU</span><span>FRI</span><span>SAT</span><span>SUN</span>
+</div>
+</section>
+<section class="grid grid-cols-2 gap-gutter">
+<div class="surface-1 rounded-xl p-unit-md flex flex-col justify-between aspect-square shadow-sm">
+<div>
+<h3 class="text-label-caps font-label-caps text-on-surface">HRV STATUS</h3>
+<div class="text-headline-md font-headline-md text-on-surface mt-1">68 <span class="text-data-num font-data-num text-outline">ms</span></div>
+</div>
+<div class="relative w-full h-1/2 flex items-center justify-center">
+<div class="w-20 h-20 rounded-full border border-surface-variant relative">
+<div class="absolute inset-0 rounded-full border-t-[3px] border-r-[3px] border-kinetic-lime rotate-45"></div>
+<div class="absolute inset-0 flex items-center justify-center text-label-caps font-label-caps kinetic-lime">BALANCED</div>
+</div>
+</div>
+</div>
+<div class="surface-1 rounded-xl p-unit-md flex flex-col justify-between aspect-square shadow-sm">
+<div>
+<h3 class="text-label-caps font-label-caps text-on-surface">VO2 MAX</h3>
+<div class="text-headline-md font-headline-md text-on-surface mt-1">54.2</div>
+</div>
+<div class="relative w-full h-1/2 flex items-end">
+<div class="w-full h-full relative border-b border-l border-surface-variant">
+<div class="absolute bottom-[20%] left-[10%] w-[4px] h-[4px] rounded-full bg-outline"></div>
+<div class="absolute bottom-[25%] left-[30%] w-[4px] h-[4px] rounded-full bg-outline"></div>
+<div class="absolute bottom-[40%] left-[50%] w-[4px] h-[4px] rounded-full bg-outline"></div>
+<div class="absolute bottom-[70%] left-[70%] w-[4px] h-[4px] rounded-full bg-outline"></div>
+<div class="absolute bottom-[85%] left-[90%] w-[6px] h-[6px] rounded-full bg-kinetic-lime pulse-active"></div>
+<svg class="absolute inset-0 w-full h-full" preserveaspectratio="none">
+<path d="M 10 80 L 30 75 L 50 60 L 70 30 L 90 15" fill="none" stroke="#e4beb4" stroke-dasharray="4 4" stroke-width="2"></path>
+</svg>
+</div>
+</div>
+</div>
+</section>
+<section class="surface-1 rounded-xl p-unit-md border-l-[6px] border-l-kinetic-lime shadow-sm">
+<div class="flex items-center gap-gutter mb-gutter">
+<span class="material-symbols-outlined kinetic-lime">psychology</span>
+<h3 class="text-label-caps font-label-caps text-on-surface">COACH INSIGHT</h3>
+</div>
+<p class="text-body-md font-body-md text-on-surface-variant">
+                Your recovery balance indicates creeping fatigue. While VO2 Max shows a +1.2% positive trend, HRV has dipped slightly over the last 48 hours. Recommend reducing intensity for tomorrow's session to remain in the optimal adaptation window.
+            </p>
+</section>
+</main>
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center h-20 px-gutter bg-surface-container border-t border-outline-variant md:hidden">
+<a class="flex flex-col items-center justify-center text-primary animate-pulse haptic-click" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">find_replace</span>
+<span class="text-label-caps font-label-caps mt-1 text-[10px]">ANALYTICS</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-all haptic-click" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">save_as</span>
+<span class="text-label-caps font-label-caps mt-1 text-[10px]">EXPLORE</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-all haptic-click" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">cloud_download</span>
+<span class="text-label-caps font-label-caps mt-1 text-[10px]">RECORD</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-all haptic-click" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">downloading</span>
+<span class="text-label-caps font-label-caps mt-1 text-[10px]">COACH</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-all haptic-click" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">file_download</span>
+<span class="text-label-caps font-label-caps mt-1 text-[10px]">PROFILE</span>
+</a>
+</nav>
+</body></html>

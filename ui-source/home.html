@@ -1,0 +1,262 @@
+﻿<!-- RAFTAR Home Dashboard -->
+<!DOCTYPE html>
+<html class="" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>RAFTAR - Athletic Intelligence</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&family=Sora:wght@400;600;700;800&display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+                "primary": "#b02f00",
+                "surface-container": "#ffe9e4",
+                "on-tertiary-container": "#fcfcff",
+                "background": "#fff8f6",
+                "secondary-fixed": "#e2e2e5",
+                "on-secondary-fixed-variant": "#454749",
+                "on-primary-fixed": "#3b0900",
+                "on-secondary-container": "#636467",
+                "on-primary": "#ffffff",
+                "on-primary-container": "#541200",
+                "primary-fixed-dim": "#ffb5a0",
+                "surface": "#fff8f6",
+                "on-secondary-fixed": "#1a1c1e",
+                "tertiary-fixed": "#c8e6ff",
+                "outline": "#907067",
+                "tertiary-fixed-dim": "#86cfff",
+                "on-error": "#ffffff",
+                "surface-tint": "#b02f00",
+                "on-tertiary-fixed-variant": "#004c6d",
+                "surface-variant": "#fadcd4",
+                "on-background": "#271813",
+                "error-container": "#ffdad6",
+                "inverse-surface": "#3e2c27",
+                "surface-container-low": "#fff1ed",
+                "outline-variant": "#e4beb4",
+                "inverse-primary": "#ffb5a0",
+                "tertiary": "#00628c",
+                "on-surface": "#271813",
+                "tertiary-container": "#007caf",
+                "surface-dim": "#f1d4cc",
+                "track-white": "#FFFFFF",
+                "error": "#ba1a1a",
+                "on-tertiary-fixed": "#001e2e",
+                "surface-bright": "#fff8f6",
+                "on-error-container": "#93000a",
+                "secondary": "#5d5e61",
+                "on-secondary": "#ffffff",
+                "saffron-vibrant": "#FF5722",
+                "asphalt-gray": "#454749",
+                "surface-ice": "#F8F9FA",
+                "secondary-container": "#e2e2e5",
+                "on-surface-variant": "#5b4039",
+                "secondary-fixed-dim": "#c6c6c9",
+                "surface-container-high": "#ffe2da",
+                "surface-container-highest": "#fadcd4",
+                "primary-fixed": "#ffdbd1",
+                "surface-container-lowest": "#ffffff",
+                "saffron-glow": "#FF8A65",
+                "on-tertiary": "#ffffff",
+                "on-primary-fixed-variant": "#862200",
+                "inverse-on-surface": "#ffede8",
+                "primary-container": "#ff5722"
+        },
+        "borderRadius": {
+                "DEFAULT": "0.125rem",
+                "lg": "0.25rem",
+                "xl": "0.5rem",
+                "full": "0.75rem"
+        },
+        "spacing": {
+                "unit-md": "24px",
+                "margin-edge": "20px",
+                "unit-sm": "12px",
+                "unit-lg": "48px",
+                "unit-xs": "4px",
+                "gutter": "16px"
+        },
+        "fontFamily": {
+                "display-xl": ["Sora"],
+                "label-caps": ["JetBrains Mono"],
+                "display-xl-mobile": ["Sora"],
+                "display-lg": ["Sora"],
+                "data-num": ["Sora"],
+                "body-md": ["Hanken Grotesk"],
+                "headline-md": ["Sora"],
+                "body-lg": ["Hanken Grotesk"]
+        }
+      }
+    }
+  }
+</script>
+<style>
+        body { background-color: #fff8f6; color: #271813; -webkit-font-smoothing: antialiased; }
+        .kinetic-transition { transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1); transition-duration: 150ms; }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        body { min-height: max(884px, 100dvh); }
+</style>
+</head>
+<body class="bg-surface min-h-screen flex flex-col font-body-md text-body-md selection:bg-primary-container selection:text-on-primary">
+<header class="fixed top-0 flex justify-between items-center w-full px-margin-edge h-16 bg-surface border-b border-outline-variant z-40">
+<div class="w-8 h-8 rounded-full bg-surface-variant overflow-hidden border border-outline-variant">
+<img class="w-full h-full object-cover" data-alt="Elite Athlete Profile" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCesRZq_NLgqG1Jm1BG6T3_-dCgjQnMseIJK9QmhC7ZGDe-9Aop-YXy4g9Yhwyw66lLZk9aKolFA-v0W9Wjn-wq80kNpHkEy2NQiZPUDcU1fwt7iOqdoutT5RnEO6qlofP8mgsmhCEIfmY_HjgMoSMcbv2m2C3zgsczHDaFEIxuoNZ_-1yQeYMP2SgUwGEe9NLovrB44AyrkprUjRzPn8bnmIV9csxXqUehIbhnWx3_UfqHbmeEYq5l"/>
+</div>
+<div class="text-display-lg font-display-lg text-primary tracking-tighter uppercase">RAFTAR</div>
+<span class="material-symbols-outlined text-primary hover:text-primary-container transition-colors duration-200 active:scale-95">sensors</span>
+</header>
+<main class="flex-1 mt-16 mb-24 flex flex-col gap-unit-md py-unit-md overflow-y-auto no-scrollbar">
+<section class="px-margin-edge">
+<div class="bg-surface-container-lowest border border-outline-variant p-unit-md relative overflow-hidden rounded-lg">
+<div class="flex items-center justify-between mb-unit-sm">
+<h2 class="font-label-caps text-label-caps text-on-surface-variant tracking-widest uppercase">The Pulse</h2>
+<span class="material-symbols-outlined text-primary text-[16px] animate-[pulse_1s_ease-in-out_infinite]" style="font-variation-settings: 'FILL' 1;">vital_signs</span>
+</div>
+<div class="flex flex-col items-center py-unit-sm border-b border-outline-variant mb-unit-sm relative">
+<div class="relative w-40 h-40 flex items-center justify-center mb-4">
+<svg class="absolute w-full h-full transform -rotate-90" viewbox="0 0 100 100">
+<circle cx="50" cy="50" fill="transparent" r="46" stroke="#ffe9e4" stroke-width="1"></circle>
+<circle class="kinetic-transition" cx="50" cy="50" fill="transparent" r="46" stroke="#ff5722" stroke-dasharray="289" stroke-dashoffset="34" stroke-linecap="butt" stroke-width="2"></circle>
+<circle cx="50" cy="50" fill="transparent" r="38" stroke="#e4beb4" stroke-dasharray="2 4" stroke-width="0.5"></circle>
+</svg>
+<div class="flex flex-col items-center justify-center">
+<div class="font-display-xl text-display-xl text-on-surface tracking-tighter flex items-baseline">
+                                88<span class="font-headline-md text-headline-md text-primary ml-1">%</span>
+</div>
+</div>
+</div>
+<span class="font-label-caps text-label-caps text-on-primary uppercase tracking-widest bg-primary px-2 py-1 border border-primary/30 rounded">Prime State</span>
+</div>
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-outline-variant text-sm mt-1">neurology</span>
+<p class="font-body-md text-body-md text-on-surface leading-relaxed">
+                        Optimal conditions for a threshold run today. Neuromuscular readiness is peaking based on nocturnal HRV data.
+                    </p>
+</div>
+</div>
+</section>
+<section class="px-margin-edge">
+<h3 class="font-label-caps text-label-caps text-outline mb-gutter tracking-widest uppercase">Today's Status</h3>
+<div class="grid grid-cols-2 gap-gutter">
+<div class="bg-surface-container-lowest border border-outline-variant p-unit-sm flex flex-col justify-between h-32 hover:border-outline kinetic-transition rounded-lg">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase">Steps</span>
+<div>
+<div class="font-data-num text-headline-md text-on-surface mb-2">8,432</div>
+<div class="flex gap-[2px] items-end h-6">
+<div class="w-full bg-primary h-[40%] rounded-t-sm"></div>
+<div class="w-full bg-primary h-[60%] rounded-t-sm"></div>
+<div class="w-full bg-primary h-[30%] rounded-t-sm"></div>
+<div class="w-full bg-primary h-[80%] rounded-t-sm"></div>
+<div class="w-full bg-primary h-[100%] rounded-t-sm"></div>
+<div class="w-full bg-surface-variant h-[20%] rounded-t-sm"></div>
+<div class="w-full bg-surface-variant h-[20%] rounded-t-sm"></div>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-lowest border border-outline-variant p-unit-sm flex flex-col justify-between h-32 hover:border-outline kinetic-transition rounded-lg">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase">Kcal Burn</span>
+<div>
+<div class="font-data-num text-headline-md text-on-surface mb-2">2,150</div>
+<div class="w-full h-[2px] bg-surface-variant relative rounded-full">
+<div class="absolute left-0 top-0 h-full bg-primary w-[75%] rounded-full"></div>
+<div class="absolute left-[75%] top-[-3px] w-[2px] h-[8px] bg-on-surface"></div>
+</div>
+</div>
+</div>
+<div class="col-span-2 bg-surface-container-lowest border border-outline-variant p-unit-sm flex items-center justify-between hover:border-outline kinetic-transition rounded-lg">
+<div class="flex flex-col">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase mb-1">Active Duration</span>
+<div class="font-data-num text-headline-md text-on-surface">
+                            45<span class="font-label-caps text-label-caps text-on-surface-variant ml-1 uppercase">min</span>
+</div>
+</div>
+<div class="flex gap-1">
+<div class="w-2 h-2 bg-primary rounded-full"></div>
+<div class="w-2 h-2 bg-primary rounded-full"></div>
+<div class="w-2 h-2 bg-primary rounded-full"></div>
+<div class="w-2 h-2 border border-primary rounded-full"></div>
+<div class="w-2 h-2 border border-surface-variant rounded-full"></div>
+</div>
+</div>
+</div>
+</section>
+<section class="px-margin-edge">
+<div class="bg-surface-container-lowest border border-outline-variant p-unit-sm flex items-center justify-between rounded-lg">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">local_fire_department</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase">Current Streak</span>
+</div>
+<div class="font-data-num text-headline-md text-on-surface tracking-tight">
+                    12 <span class="font-label-caps text-label-caps text-outline uppercase">Days</span>
+</div>
+</div>
+</section>
+<section class="px-margin-edge">
+<h3 class="font-label-caps text-label-caps text-outline mb-gutter tracking-widest uppercase">Network Telemetry</h3>
+<div class="bg-surface-container-lowest border border-outline-variant p-unit-sm relative overflow-hidden group hover:border-outline kinetic-transition cursor-pointer rounded-lg">
+<div class="flex items-center gap-3 mb-unit-sm relative z-10">
+<div class="w-8 h-8 bg-surface-variant border border-outline-variant overflow-hidden rounded-full">
+<img class="w-full h-full object-cover" data-alt="Elite Athlete Profile" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBLLqgsxPx_J5Lt2m2_nx7ULWMhc03bGoLkx0F0cVbvNfmE3ux77j-IhTQ6NLMv1SSz7Givw1pWqR84e6YjVllqyGXuPoMPenjqfOSGcVxE9Iby_L9FSzceJLwp3mmEOO2kUPrkXMGNOwyQ0hWC7Wy6lWw3EufGE8AFjLxbqOqD_1cfvGiGDRQlr7jQ0Ub9W75fVEznKX0XQuupQ10Rh4HXiO27oCmonv8fOivJy5ADYxUFrSVhaxjI"/>
+</div>
+<div class="flex flex-col">
+<span class="font-label-caps text-label-caps text-on-surface uppercase tracking-wider">E. Cross</span>
+<span class="font-label-caps text-[10px] text-outline uppercase tracking-widest">2h ago • Running</span>
+</div>
+</div>
+<div class="w-full h-32 border border-outline-variant mb-unit-sm relative bg-surface-container overflow-hidden rounded-lg">
+<img class="absolute inset-0 w-full h-full object-cover opacity-60 mix-blend-multiply filter" data-alt="A highly stylized, minimal digital map of a city landscape." data-location="Zurich" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBO_d7v-XEuevQiNxZuXOz9qvUZnvhbc3J8M5yiylJT_rtj05nLbADe56EhEYv7FXJMokFE-nhN3_NkufBVg_sSaBHQ_Tsm875hjbOx_A8W7GFHvjCO1_cgTh7BLZm2DXfv-l8liwDGjIhWHA9TKIMj2oEihzgUzeqvBtq0ndu-l6Ai-14Z8STvQEAepTsMar57sFS7CJ7NVQs6xOobVAgY916mX1_8eGZSR3iamEbz-8VLlvsm-GyQ"/>
+<svg class="absolute inset-0 w-full h-full z-10 drop-shadow-sm" preserveaspectratio="none" viewbox="0 0 100 50">
+<polyline fill="none" points="10,40 25,35 40,45 60,20 85,25" stroke="#ff5722" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></polyline>
+<rect fill="#ffffff" h="4" rx="2" stroke="#ff5722" stroke-width="1.5" w="4" x="8" y="38"></rect>
+<rect fill="#ff5722" h="4" rx="2" w="4" x="83" y="23"></rect>
+</svg>
+</div>
+<div class="grid grid-cols-3 gap-2 border-t border-outline-variant pt-unit-sm relative z-10">
+<div class="flex flex-col">
+<span class="font-label-caps text-[10px] text-outline uppercase tracking-widest mb-1">Distance</span>
+<span class="font-data-num text-body-lg text-on-surface">10.2k</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-caps text-[10px] text-outline uppercase tracking-widest mb-1">Pace</span>
+<span class="font-data-num text-body-lg text-on-surface">4:15</span>
+</div>
+<div class="flex flex-col items-end">
+<span class="font-label-caps text-[10px] text-outline uppercase tracking-widest mb-1">Strain</span>
+<span class="font-data-num text-body-lg text-primary">High</span>
+</div>
+</div>
+</div>
+</section>
+</main>
+<button class="fixed bottom-28 right-margin-edge w-14 h-14 bg-primary-container text-on-primary flex items-center justify-center shadow-lg z-50 hover:bg-primary hover:scale-105 kinetic-transition active:scale-95 border border-transparent rounded-full">
+<span class="material-symbols-outlined text-3xl font-bold" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+</button>
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center h-20 px-gutter bg-surface-container-lowest border-t border-outline-variant">
+<button class="flex flex-col items-center justify-center text-primary animate-pulse w-16 h-full kinetic-transition active:scale-95">
+<span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 1;">analytics</span>
+<span class="font-label-caps text-label-caps text-[10px]">Analytics</span>
+</button>
+<button class="flex flex-col items-center justify-center text-outline hover:text-primary transition-all w-16 h-full kinetic-transition active:scale-95">
+<span class="material-symbols-outlined mb-1">explore</span>
+<span class="font-label-caps text-label-caps text-[10px]">Explore</span>
+</button>
+<button class="flex flex-col items-center justify-center text-outline hover:text-primary transition-all w-16 h-full kinetic-transition active:scale-95">
+<span class="material-symbols-outlined mb-1 text-2xl">radio_button_checked</span>
+</button>
+<button class="flex flex-col items-center justify-center text-outline hover:text-primary transition-all w-16 h-full kinetic-transition active:scale-95">
+<span class="material-symbols-outlined mb-1">psychology</span>
+<span class="font-label-caps text-label-caps text-[10px]">Psychology</span>
+</button>
+<button class="flex flex-col items-center justify-center text-outline hover:text-primary transition-all w-16 h-full kinetic-transition active:scale-95">
+<span class="material-symbols-outlined mb-1">person</span>
+<span class="font-label-caps text-label-caps text-[10px]">Person</span>
+</button>
+</nav>
+</body></html>
