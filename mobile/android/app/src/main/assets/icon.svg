@@ -1,0 +1,48 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1C1917" />
+      <stop offset="100%" stop-color="#0C0A09" />
+    </linearGradient>
+    <linearGradient id="primaryGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FF6B35" />
+      <stop offset="50%" stop-color="#FF3E00" />
+      <stop offset="100%" stop-color="#B02F00" />
+    </linearGradient>
+    <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFD166" />
+      <stop offset="100%" stop-color="#FF6B35" />
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="16" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <!-- Squircle App Background with Subtle Border -->
+  <rect x="16" y="16" width="480" height="480" rx="108" fill="url(#bgGrad)" stroke="#292524" stroke-width="6" />
+
+  <!-- Speed Kinetic Chevron Trails -->
+  <path d="M 120 370 L 220 370 L 260 310 L 160 310 Z" fill="url(#accentGrad)" opacity="0.25" />
+  <path d="M 150 410 L 250 410 L 290 350 L 190 350 Z" fill="url(#primaryGrad)" opacity="0.4" />
+
+  <!-- Glowing Core Athletic "R" / Cheetah Sprint Vector -->
+  <g filter="url(#glow)">
+    <!-- Vertical Power Spine -->
+    <path d="M 148 120 L 212 120 L 212 392 L 148 392 Z" fill="url(#primaryGrad)" rx="8" />
+
+    <!-- Upper Forward Aerodynamic Loop -->
+    <path d="M 190 120 H 296 C 360 120 392 152 392 208 C 392 264 356 292 292 292 H 190 Z" fill="url(#primaryGrad)" />
+    <!-- Loop Cutout -->
+    <path d="M 212 176 H 286 C 318 176 332 188 332 208 C 332 228 316 236 286 236 H 212 Z" fill="#141210" />
+
+    <!-- Kinetic Forward Drive Leg (Velocity Vector) -->
+    <path d="M 264 260 L 372 392 L 310 392 L 218 280 Z" fill="url(#accentGrad)" />
+
+    <!-- Top Speed Flash Accent -->
+    <polygon points="340,90 310,140 370,140" fill="#FFD166" opacity="0.9" />
+  </g>
+
+  <!-- Corner Pulse Dot (GPS Lock Indicator) -->
+  <circle cx="390" cy="120" r="14" fill="#00E676" stroke="#121212" stroke-width="4" />
+</svg>

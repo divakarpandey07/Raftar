@@ -65,8 +65,8 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
-        // Connect to local or production HUD
-        webView.loadUrl("http://172.28.1.234:3000")
+        // Load embedded offline 120Hz HUD
+        webView.loadUrl("file:///android_asset/index.html")
     }
 
     private fun requestPermissions() {
